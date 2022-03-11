@@ -36,7 +36,7 @@ class ExampleViewController: UIViewController {
     init(displayMode: DisplayMode) {
         self.displayMode = displayMode
         let config = WKWebViewConfiguration()
-//        config.limitsNavigationsToAppBoundDomains = true
+        config.limitsNavigationsToAppBoundDomains = false
         config.setURLSchemeHandler(schemeHandler, forURLScheme: LocalImageSchemeHandler.scheme)
         self.webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 500), configuration: config)
         super.init(nibName: nil, bundle: nil)

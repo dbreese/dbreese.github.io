@@ -17,25 +17,28 @@
   <h1>Content</h1>
   <script>
     // register ServiceWorker, remember to use absolute path!
+    console.log('attempting to register sw')
     if (navigator.serviceWorker) {
+      console.log('registering sw')
       navigator.serviceWorker.register('/sw.js').then((reg) => {
         console.log("registered, scope: " + reg.scope);
       })
 
       const messageChannel = new MessageChannel();
 
+      console.log('posting message to sw')
       navigator.serviceWorker.controller.postMessage({
         type: 'INIT_PORT',
       }, [messageChannel.port2]);
 
       messageChannel.port1.onmessage = (event) => {
-        console.log("event: " + event);
+        console.log("received port messate event: " + event, event);
       };
     }
 
     // --- Application code here ---
   </script>
-  <img src="testImage.jpg" width="300" height="168" />
+  <img src="/testImage.jpg" width="300" height="168" />
 </body>
 
 </html>

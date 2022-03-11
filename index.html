@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Title</title>
+    <link rel="canonical" href="https://dbreese.github.io/" />
+    <style type="text/css">
+      /* --- application CSS here --- */
+      * {
+        background-color: #f5f4f0;
+        font-family: Georgia, serif;
+      }
+    </style>
+  </head>
 
-<head>
-  <title>Title</title>
-  <link rel="canonical" href="https://dbreese.github.io/" />
-  <style type="text/css">
-    /* --- application CSS here --- */
-    * {
-      background-color: #F5F4F0;
-      font-family: Georgia, serif;
-    }
-  </style>
-</head>
+  <body>
+    <h1>Content</h1>
+    <script>
+      // register ServiceWorker, remember to use absolute path!
+      console.log("attempting to register sw");
+      if (navigator.serviceWorker) {
+        console.log("registering sw");
+        navigator.serviceWorker.register("/sw.js").then((reg) => {
+          console.log("registered, scope: " + reg.scope);
+        });
 
-<body>
-  <h1>Content</h1>
-  <script>
-    // register ServiceWorker, remember to use absolute path!
-    console.log('attempting to register sw')
-    if (navigator.serviceWorker) {
-      console.log('registering sw')
-      navigator.serviceWorker.register('/sw.js').then((reg) => {
-        console.log("registered, scope: " + reg.scope);
-      })
+        self.addEventListener("activate", (event) => {
+          clients.claim();
+          console.log("Ready!");
 
-      const messageChannel = new MessageChannel();
+          const messageChannel = new MessageChannel();
 
-      console.log('posting message to sw')
-      navigator.serviceWorker.controller.postMessage({
-        type: 'INIT_PORT',
-      }, [messageChannel.port2]);
+          console.log("posting message to sw");
+          navigator.serviceWorker.controller.postMessage(
+            {
+              type: "INIT_PORT",
+            },
+            [messageChannel.port2]
+          );
 
-      messageChannel.port1.onmessage = (event) => {
-        console.log("received port messate event: " + event, event);
-      };
-    }
+          messageChannel.port1.onmessage = (event) => {
+            console.log("received port messate event: " + event, event);
+          };
+        });
+      }
 
-    // --- Application code here ---
-  </script>
-  <!-- This assumes img tags can be re-written to use an always-allowed App-Bound-Domain -->
-  <img src="/testImage.jpg" width="300" height="168" />
+      // --- Application code here ---
+    </script>
+    <!-- This assumes img tags can be re-written to use an always-allowed App-Bound-Domain -->
+    <img
+      src="http://localhost:9000/proxy?xyz=/testImage.jpg"
+      width="300"
+      height="168"
+    />
 
-
-  <a href="https://google.com">Navigate Away</a>
-</body>
-
+    <a href="https://google.com">Navigate Away</a>
+  </body>
 </html>

@@ -1,3 +1,4 @@
 *.xcuserstate
 xcuserdata
 app/SWTest/DerivedData
+app/SWTest/Pods

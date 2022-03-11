@@ -35,3 +35,23 @@ self.addEventListener('activate', function (e) {
     outgoingPort.postMessage({ message: "activated" });
   }
 })
+
+
+// self.addEventListener("activate", (event) => {
+//   clients.claim();
+//   console.log("Ready!");
+
+//   const messageChannel = new MessageChannel();
+
+//   console.log("posting message to sw");
+//   navigator.serviceWorker.controller.postMessage(
+//     {
+//       type: "INIT_PORT",
+//     },
+//     [messageChannel.port2]
+//   );
+
+//   messageChannel.port1.onmessage = (event) => {
+//     console.log("received port message event: " + event, event);
+//   };
+// });

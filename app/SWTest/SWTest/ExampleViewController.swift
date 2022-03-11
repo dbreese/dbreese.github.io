@@ -36,7 +36,7 @@ class ExampleViewController: UIViewController {
     init(displayMode: DisplayMode) {
         self.displayMode = displayMode
         let config = WKWebViewConfiguration()
-        config.limitsNavigationsToAppBoundDomains = true
+//        config.limitsNavigationsToAppBoundDomains = true
         config.setURLSchemeHandler(schemeHandler, forURLScheme: LocalImageSchemeHandler.scheme)
         self.webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 500), configuration: config)
         super.init(nibName: nil, bundle: nil)
@@ -63,7 +63,7 @@ class ExampleViewController: UIViewController {
     }
 
     func loadRemote() {
-        let urlString = "https://paultiarks.github.io/SWTest/"
+        let urlString = "https://dbreese.github.io/"
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             self.webView.load(request)

@@ -16,7 +16,7 @@ self.addEventListener('message', function (e) {
 
 // Respond with cached resources
 self.addEventListener('fetch', function (e) {
-  console.log("sw.fetchEvent received", e)
+  console.log("sw.fetchEvent received for url " + e.request.url, e)
 
   if (outgoingPort) {
     outgoingPort.postMessage({ message: " fetch: " + e.request });

@@ -38,7 +38,7 @@
           );
 
           messageChannel.port1.onmessage = (event) => {
-            console.log("received port messate event: " + event, event);
+            console.log("received port message event: " + event, event);
           };
         });
       }
@@ -47,7 +47,7 @@
     </script>
     <!-- This assumes img tags can be re-written to use an always-allowed App-Bound-Domain -->
     <img
-      src="http://localhost:9000/proxy?xyz=/testImage.jpg"
+      src="/testImage.jpg"
       width="300"
       height="168"
     />

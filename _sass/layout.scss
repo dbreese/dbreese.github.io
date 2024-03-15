@@ -432,11 +432,12 @@ nav > ul li a:active {
 @media only screen and (max-width: 1070px) {
 
 	.iphonePreview {
-		background-size: 370px auto;
+		background-size: 500px auto;
 	}
 
 	.iphoneScreen {
-		width: 322px;
+		width: 500px;
+		height: auto;
 		margin-left: 24px;
 		margin-top: 22px;
 	}
@@ -461,14 +462,13 @@ nav > ul li a:active {
 		display: flex;
 		background-size: 260px auto;
 		background-position: center 0;
-		margin-top: 47px;
 		justify-content: center;
-		padding-bottom: 75px;
+		margin: 30px;
+		padding: 20px;
 	}
 
 	.iphoneScreen {
-		width: 226px;
-		height: 488px;
+		width: 400px;
 		-webkit-clip-path: url(#screenMask);
 		clip-path: url(#screenMask);
 		margin: 0px;
@@ -500,7 +500,7 @@ nav > ul li a:active {
 	justify-content: flex-start;
 	flex-grow: 1;
 	flex-wrap: wrap;
-	margin-top: 93px;
+	margin-top: 10px;
 }
 
 .feature {

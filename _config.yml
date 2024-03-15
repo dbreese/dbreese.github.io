@@ -58,7 +58,7 @@ features                                  :
 
   - title                                 : Categories
     description                           : Steampunk, Greenpunk, Solarpunk! Mountains, Fantasy, Space, Love, and more.
-    fontawesome_icon_name                 : steam
+    fontawesome_icon_name                 : heart
 
 # Theme Settings
 topbar_color                              : "#000000"

@@ -1,3 +1,4 @@
+// For ABOUT ME
 @font-face {
 	font-family: 'Comic Sans';
 	src: url('/assets/static/comic-sans.woff') format('woff');
@@ -18,6 +19,21 @@
 	}
   }
 
+  // For the Gallery functionality
+  .image-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 10px;
+	padding: 10px;
+  }
+  
+  .responsive-image {
+	width: 100%;
+	height: auto;
+	border: 0;
+  }
+
+// OOTB From Theme:
 .imageWrapper {					// Sets the background image in the header area
 	height: 714px;
 	background: 

@@ -7,8 +7,33 @@
 
 {% include head.html %}
 
-<body class="subPageBody">
 
+<body class="subPageBody">
+    <script>
+        // Function to open the modal
+        function openModal(src) {
+            document.getElementById('myModal').style.display = "block";
+            document.getElementById('img01').src = src;
+        }
+
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Also close if anywhere outside the image is clicked
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     <div class="headerBackground subPageHeaderBackground">
         <div class="container subPageContainer">
 
@@ -18,22 +43,39 @@
                 {{ content }}
 
 
-            <p></p>
-            <div class="image-grid">
-                {% for image in site.static_files %}
-                {% if image.path contains '/assets/gallery/' and image.extname == '.jpg' %}
-                <a href="{{ site.baseurl }}{{ image.path }}" target="_blank">
-                    <img src="{{ site.baseurl }}{{ image.path }}" alt="Thumbnail" style="width: 300px; height: auto;" class="responsive-image">
-                </a>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </article>
+                <p></p>
+                <div class="image-grid">
+                    {% for image in site.static_files %}
+                    {% if image.path contains '/assets/gallery/' and image.extname == '.jpg' %}
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}" class="thumbnail"
+                        onclick="openModal(this.src)">
+
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </article>
 
 
         </div>
         {% include appstoreimages.html %}
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById('myModal');
+
+            modal.addEventListener('click', function () {
+                modal.style.display = "none";
+            });
+        });
+    </script>
 </body>
 
 </html>

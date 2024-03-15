@@ -1,3 +1,23 @@
+@font-face {
+	font-family: 'Comic Sans';
+	src: url('/assets/static/comic-sans.woff') format('woff');
+}
+
+.note-card {
+	font-family: 'Comic Sans', sans-serif;
+	background-color: #2c3e50;
+	color: #ffffff;
+	border: 4px solid #ffffff;
+	border-radius: 10px;
+	padding: 20px;
+	font-family: "Comic Sans";
+	
+	.content {
+	  // Additional styling for content inside the note card
+	  // You can customize this as needed
+	}
+  }
+
 .imageWrapper {					// Sets the background image in the header area
 	height: 714px;
 	background: 

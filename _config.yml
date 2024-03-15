@@ -1,5 +1,5 @@
 #page title
-page_title                                :                                           # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
+page_title                                : Outside Inside                            # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
 
 # App Info
 ios_app_id                                : 1234793120                                # Required. Enter iOS app ID to automatically populate name, price and icons (e.g. 718043190).
@@ -20,8 +20,8 @@ enable_smart_app_banner                   : true                                
 
 
 # Information About Yourself
-your_name                                 : Dustin Breese                               
-your_link                                 : https://outsideinside.app                     
+your_name                                 : Dustin                               
+your_link                                 : /contact/                     
 your_city                                 : Colorado                                
 email_address                             : outsideinsideapp@gmail.com
 facebook_username                         :                                           
@@ -37,7 +37,7 @@ mastodon_link                             :
 features                                  :
 
   - title                                 : Beautiful AI Images
-    description                           : Hundreds of curated AI-Generated Images, curated and categorized.
+    description                           : Hundreds of curated AI-Generated Images.
     fontawesome_icon_name                 : magic
     
   - title                                 : iCloud Photos
@@ -46,15 +46,19 @@ features                                  :
 
   - title                                 : Effects
     description                           : Apply stunning visual effects to your photos such as Noir, B & W, and Sepia.
-    fontawesome_icon_name                 : bolt
+    fontawesome_icon_name                 : adjust
 
   - title                                 : Transitions
     description                           : Multiple transitions and presentation styles to choose from.
     fontawesome_icon_name                 : adjust
 
-  - title                                 : Easy to Tweak
-    description                           : Tweak accent color, images, icons and transparency via the _config.yml file. No HTML/CSS needed.
-    fontawesome_icon_name                 : adjust
+  - title                                 : Date & Time
+    description                           : Control what info is shown, and where.
+    fontawesome_icon_name                 : clock
+
+  - title                                 : Categories
+    description                           : Steampunk, Greenpunk, Solarpunk! Mountains, Fantasy, Space, Love, and more.
+    fontawesome_icon_name                 : steam
 
 # Theme Settings
 topbar_color                              : "#000000"

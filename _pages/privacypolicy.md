@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Privacy Policy
+title: Privacy
 permalink: /privacy/
-include_in_header: false
+include_in_header: true
 ---
 <!-- https://www.termsfeed.com/live/6cc20dec-7e8f-4c0e-9cb2-652b72483a8d -->
 
@@ -149,6 +149,6 @@ include_in_header: false
 <p>By email: outsideinsideapp@gmail.com</p>
 </li>
 <li>
-<p>By visiting this page on our website: <a href="https://outsideinside.app/contact/" rel="external nofollow noopener" target="_blank">https://outsideinside.app/contact/</a></p>
+<p>By visiting this page on our website: <a href="https://outsideinside.app/contact/" rel="external nofollow noopener" target="_self">https://outsideinside.app/contact/</a></p>
 </li>
 </ul>

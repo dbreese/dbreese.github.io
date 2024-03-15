@@ -1,7 +1,8 @@
 ---
 layout: page
 title: What's New
-include_in_header: true
+permalink: /changelog/
+include_in_header: false
 ---
 
 # Changelog
